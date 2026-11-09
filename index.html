@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ten Minutes in the Village: AI Eye Screening and Rural Healthcare in Kazakhstan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Archivo:wght@500;700;800&display=swap">
+<style>
+:root{--bg:#F2F5F7;--ink:#10222E;--mute:#4A5D6A;--line:#C9D3DA;--acc:#0F7B6C;--warn:#B4400E;--card:#fff;--vbg:#FFF1C2;--vfg:#5A4300}
+@media (prefers-color-scheme:dark){:root{--bg:#0E1A22;--ink:#E6EEF2;--mute:#9DB0BC;--line:#2A3C48;--acc:#4CC2B0;--warn:#F08A55;--card:#15262F;--vbg:#4A3C0A;--vfg:#FFE9A0}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:19px/1.65 Newsreader,Georgia,serif}
+h1,h2,h3,nav,.lab,th,label,summary,.big,.num{font-family:Archivo,"Helvetica Neue",Arial,sans-serif}
+a{color:var(--acc)}a.c{text-decoration:none;border-bottom:1px dotted var(--acc);white-space:normal}
+a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.7rem 1.2rem;display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.85rem;font-weight:500;z-index:5}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--acc)}
+header{max-width:1000px;margin:0 auto;padding:3.5rem 1.2rem 1.5rem}
+.kick{font:700 .8rem Archivo,sans-serif;letter-spacing:.12em;color:var(--acc)}
+h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.03;font-weight:800;letter-spacing:-.02em;margin:.4rem 0 1rem}
+.sub{max-width:44ch;color:var(--mute);font-size:1.15rem}
+.hero{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;margin-top:2rem;border-top:3px solid var(--ink);padding-top:1.2rem}
+.big{font-size:clamp(4rem,14vw,8rem);font-weight:800;line-height:.9;color:var(--warn)}
+.hero p{max-width:36ch;margin:0;font-size:1.15rem}
+main{max-width:720px;margin:0 auto;padding:0 1.2rem 3rem}
+section{padding-top:3.5rem}
+h2{font-size:2rem;line-height:1.15;margin:0 0 .3rem;font-weight:800}
+h2 .num{color:var(--acc);margin-right:.4rem}
+h3{font-size:1.1rem;margin:2rem 0 .4rem}
+.lab{font-size:.85rem;color:var(--mute);margin:0 0 1rem}
+.q{border-left:4px solid var(--acc);padding:.2rem 1rem;margin:1.5rem 0}
+.q b{font-family:Archivo,sans-serif;font-size:.8rem;letter-spacing:.08em;display:block;color:var(--acc)}
+mark.v{background:var(--vbg);color:var(--vfg);padding:0 .25em;border-radius:3px;font:600 .75em Archivo,sans-serif}
+.fig{background:var(--card);border:1px solid var(--line);padding:1rem 1.2rem;margin:1.5rem 0}
+.fig strong{font-family:Archivo,sans-serif}
+.bar{display:grid;grid-template-columns:110px 1fr 70px;gap:.6rem;align-items:center;font:500 .85rem Archivo,sans-serif;margin:.3rem 0}
+.bar i{display:block;height:15px;background:var(--acc);border-radius:2px}
+.bar i.w{background:var(--warn)}.bar i.g{background:var(--mute)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem;background:var(--card)}
+th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left;vertical-align:top}
+details{margin-top:.6rem;font-size:.85rem}summary{cursor:pointer;color:var(--acc);font-weight:700}
+.case{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--acc);padding:.2rem 1.2rem 1rem;margin:1.5rem 0}
+.case h3{margin-top:1rem}
+.cost{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--warn);padding:.2rem 1.1rem 1rem;margin:1.2rem 0}
+.cost h3{margin-top:1rem}.cost h3 small{display:block;font-weight:500;color:var(--warn);font-size:.75rem;letter-spacing:.05em}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.6rem 1rem;margin:1rem 0}
+.calc label{font-size:.78rem;display:block}
+.calc input{width:100%;font:1rem Archivo,sans-serif;padding:.3rem;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.out{background:var(--ink);color:var(--bg);padding:1rem 1.2rem;font:500 .92rem/1.7 Archivo,sans-serif}
+.verdict{background:var(--ink);color:var(--bg);padding:1.2rem 1.5rem;margin:2rem 0}.verdict h3{margin-top:0}.verdict a{color:var(--bg)}
+.todo{background:var(--card);border:2px dashed var(--warn);padding:.8rem 1.1rem;margin:2rem 0;font-size:.92rem}
+ol.src{font-size:.88rem;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding:2rem 1.2rem;text-align:center;color:var(--mute);font-size:.9rem}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><a href="#problem">1 Problem</a><a href="#data">2 Data</a><a href="#research">3 Research</a><a href="#solution">4 Solution</a><a href="#bill">The bill</a><a href="#verdict">Verdict</a><a href="#ai">AI statement</a><a href="#refs">Sources</a></nav>
+
+<header>
+<div class="kick">AN AI ANSWER FOR KAZAKHSTAN</div>
+<h1>Ten minutes in the village</h1>
+<p class="sub">Could AI bring a specialist's eye to rural clinics, and what would it cost the country? A project on rural healthcare and diabetic eye disease.</p>
+<div class="hero"><div class="big">17%</div><p>of Kazakhstan's doctors work in rural areas, where 36% of the people live. Every number on this page links to its source.</p></div>
+<p class="lab" style="margin-top:1.5rem">[Your name] · PLS 419/519 · Fall 2026</p>
+</header>
+
+<main>
+<div class="todo"><strong>Draft notes, delete before presenting.</strong> Yellow <mark class="v">CHECK</mark> tags mark the few things I could not confirm in a source. Items labelled "assumption" in the calculator are placeholders: replace them with real quotes. Count the words of sections 1 to 4 (target 3,200-3,600).</div>
+
+<section id="problem">
+<h2><span class="num">1</span>The Problem</h2>
+<p class="lab">Who is affected, where, at what scale, and how it is changing</p>
+<p>Kazakhstan has about 20.5 million people, and 7.4 million of them, 36%, live in rural areas <a class="c" href="https://www.stat.gov.kz/en">(Bureau of National Statistics, March 2026)</a>. Their doctors are not where they are. According to the State Health Development Programme 2020-2025, as cited in a Kazakh public-health journal, cities have 56.8 doctors per 10,000 residents and rural areas 16.1, and 83% of the country's doctors work in cities, only 17% in villages <a class="c" href="https://newjournal.ssmu.kz/upload/iblock/fa1/62_68_3_23_2021.pdf">(Nauka i Zdravookhranenie, 2021)</a>. The figures are from different dates, so the comparison is approximate, but the gap is large: a village resident has roughly a third of the doctors per head that a city resident has.</p>
+<p>The state has noticed, and the trend is partly improving. The Ministry of Health reported that the doctor shortage in the public sector was more than 4,800 positions in 2023, about 3,700 in cities and 1,100 in villages <a class="c" href="https://kazpravda.kz/n/nazvany-samye-vostrebovannye-meditsinskie-spetsialnosti-v-kazahstane">(Kazpravda)</a>, and that by the end of 2025 the need for doctors had fallen by 20.4% against 2023, and by 28.3% in rural areas <a class="c" href="https://www.zakon.kz/obshestvo/6536341-v-kazakhstane-za-5-let-otkryto-bolee-tysyachi-novykh-meduchrezhdeniy.html">(Zakon.kz, 2026)</a>. One-off payments to health workers who move to the countryside reached about 529 people in 2025, up from 254 in 2024 <a class="c" href="https://24.kz/ru/news/social/764347-pochti-chetyre-tysyachi-vrachej-ne-khvataet-v-kazakhstane">(24.kz)</a>. Yet of the 2,161 young specialists placed in 2024, only 370 went to villages <a class="c" href="https://www.inform.kz/ru/kak-reshaetsya-problema-defitsita-vrachey-v-kazahstanskih-selah-18e3fb">(Inform.kz)</a>. Progress is real, but the villages are still last in the queue.</p>
+<h3>Scope: diabetic eye disease in rural primary care</h3>
+<p>This project narrows the broad problem of "rural health" to one function where the gap bites hardest: screening people with diabetes for diabetic retinopathy, damage to the retina that can cause blindness. About 475,000 people were registered with diabetes in Kazakhstan's national electronic health system between 2014 and 2019 <a class="c" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9650815">(Galiyeva et al., 2022)</a>. Retinopathy is a leading cause of avoidable vision loss in working-age adults, and in one Kazakh regional screening study, retinopathy was found in 177 of 310 registered patients with diabetes who were examined, and 18.6% of those cases were already at the proliferative stage, the most dangerous one <a class="c" href="https://newjournal.ssmu.kz/en/publication/163/screening-of-diabetic-retinopathy-in-a-population-of-pavlodar-region/">(Kapanov et al., 2017)</a>. The authors argued that monitoring of patients with diabetes needs to be rethought. That sample was not random, so it does not give a national rate, but it shows what screening can find.</p>
+<p>Retinopathy suits this project for a practical reason. The disease is often silent until it is advanced, so detection depends on a photograph of the back of the eye and a trained person to read it. The photograph can be taken by a nurse. The reading is what is scarce. That makes it a clear test of whether AI can substitute for a specialist's eye in places where specialists are not.</p>
+<div class="q"><b>THE SOCIAL-SCIENCE QUESTION</b>When a village nurse can photograph an eye but only a distant specialist can read it, who should be trusted to read it (the specialist, the nurse, or software), and who decides, owns and pays for that choice? Can AI be introduced so that it strengthens rural health institutions rather than excusing the state from fixing them?</div>
+<p>The question is about power as well as technology. A rural patient is the person least able to question an algorithm, refuse use of their data, or insist on a human second opinion. A tool that appears to solve the staffing gap can also make it politically easier to leave the gap in place.</p>
+</section>
+
+<section id="data">
+<h2><span class="num">2</span>Background &amp; Data</h2>
+<p class="lab">What is measured, what it shows, and where it goes silent</p>
+<p>Population and health indicators come from the Bureau of National Statistics, which also publishes the UN Sustainable Development Goal indicators for Kazakhstan. The Ministry of Health reports staffing, vacancies and programme results, mostly in briefings. Patient-level records sit in the Unified National Electronic Health System, which researchers have used for diabetes epidemiology <a class="c" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9650815">(Galiyeva et al., 2022)</a>. International bodies such as the World Bank and WHO give national estimates for comparison. None of these sources publishes village-level access data or the number of diabetic patients who receive an annual eye examination.</p>
+
+<h3>What the data shows</h3>
+<div class="fig"><strong>Figure 1. Doctors per 10,000 people, urban and rural</strong><div id="f1"></div>
+<details><summary>VIEW THE DATA AS A TABLE</summary><div class="wrap"><table><tr><th>Area</th><th>Doctors per 10,000</th></tr><tr><td>Urban</td><td>56.8</td></tr><tr><td>Rural</td><td>16.1</td></tr></table></div></details>
+<p class="lab">Source: State Health Development Programme 2020-2025, as cited in <a class="c" href="https://newjournal.ssmu.kz/upload/iblock/fa1/62_68_3_23_2021.pdf">Nauka i Zdravookhranenie (2021)</a>. Ratio is my calculation: 56.8 / 16.1 = 3.5.</p></div>
+<p>A city resident has about three and a half times as many doctors per head as a rural resident. The imbalance is also visible in who is hired: Figure 2 shows where the 2,161 young specialists employed in 2024 went.</p>
+<div class="fig"><strong>Figure 2. Young doctors placed in 2024, by location</strong><div id="f2"></div>
+<details><summary>VIEW THE DATA AS A TABLE</summary><div class="wrap"><table><tr><th>Location</th><th>Young specialists</th><th>Share</th></tr><tr><td>Cities</td><td>1,791</td><td>82.9%</td></tr><tr><td>Villages</td><td>370</td><td>17.1%</td></tr></table></div></details>
+<p class="lab">Source: <a class="c" href="https://www.inform.kz/ru/kak-reshaetsya-problema-defitsita-vrachey-v-kazahstanskih-selah-18e3fb">Inform.kz</a>, Ministry of Health figures for 2024. Shares are my calculation. Villages hold 36% of the population (<a class="c" href="https://www.stat.gov.kz/en">BNS</a>).</p></div>
+<p>New hires go overwhelmingly to cities, so staffing incentives alone are unlikely to close a three-to-one gap quickly. That is the opening for technology. But the data also warns against picking the wrong disease. Tuberculosis, the other disease where AI image reading has WHO backing, is a weaker target in Kazakhstan, as Figure 3 shows.</p>
+<div class="fig"><strong>Figure 3. Tuberculosis incidence per 100,000: official count against WHO estimate</strong><div id="f3"></div>
+<details><summary>VIEW THE DATA AS A TABLE</summary><div class="wrap"><table><tr><th>Year</th><th>Official (BNS)</th><th>Estimate (World Bank/WHO)</th></tr><tr><td>2019</td><td>45.6</td><td>n/a</td></tr><tr><td>2020</td><td>35.7</td><td>n/a</td></tr><tr><td>2021</td><td>35.9</td><td>n/a</td></tr><tr><td>2022</td><td>36.5</td><td>n/a</td></tr><tr><td>2023</td><td>34.7</td><td>49</td></tr><tr><td>2024</td><td>33.4</td><td>45</td></tr></table></div></details>
+<p class="lab">Sources: official series from <a class="c" href="https://sdgdata.stat.gov.kz/en/3-3-2/">sdgdata.stat.gov.kz</a>; estimates (2023, 2024) from the World Bank via <a class="c" href="https://www.theglobaleconomy.com/Kazakhstan/Tuberculosis/">TheGlobalEconomy.com</a>. Estimates for earlier years were not collected.</p></div>
+<p>Tuberculosis in Kazakhstan has fallen from an incidence of 153.2 per 100,000 in 2000 to 34.7 in 2023, and one analysis found rural incidence (36.0) now slightly above urban (33.9) <a class="c" href="https://tbreadingnotes.blogspot.com/2025/05/tuberculosis-in-kazakhstan.html">(summary of a national analysis, 2025)</a>. The WHO-based estimates for 2023 and 2024 imply that about 71% and 74% of cases were officially counted. TB is therefore a problem of the last quarter of cases, in a country that already detects most of them. Diabetic retinopathy, by contrast, has no equivalent screening network at all, which is why this project focuses on it.</p>
+
+<h3>Where the data goes silent</h3>
+<p><strong>Two "doctors per 10,000" figures that do not agree.</strong> The Ministry of Health reports 41 doctors per 10,000 for 2025 and 40.6 for 2023 <a class="c" href="https://kapital.kz/gosudarstvo/146950/za-pyat-let-ottok-medrabotnikov-iz-kazahstana-snizilsya-v-pyat-raz-minzdrav.html">(Kapital.kz)</a>. Other reports of national statistics put the figure at 28.2 <a class="c" href="https://inbusiness.kz/ru/last/v-kazahstane-vrachej-menshe-chem-v-rossii">(Inbusiness.kz)</a> and 27.9 <a class="c" href="https://rus.azattyq-ruhy.kz/society/108895-obespechennost-vrachami-i-medsestrami-snizhaetsia-v-kazakhstane-usilivaetsia-regionalnyi-defitsit/amp">(Azattyq Ruhy)</a>. I could not find a public explanation, and the difference is too large to be rounding. It probably reflects which doctors are counted and which population is used, but that is my guess. A 13-point difference decides whether Kazakhstan looks Estonian or Georgian-lagging, so any claim about the doctor gap should state which source it uses. I use the rural/urban split from the State Programme only because it is the one source that gives both numbers on the same basis.</p>
+<p><strong>The rural population has two sizes.</strong> The Bureau of National Statistics gives 7.4 million (36%) for March 2026. An earlier government statement cited about 8 million, or 41% <a class="c" href="https://primeminister.kz/en/news/modernising-rural-health-care-to-increase-life-expectancy-and-social-well-being-3010107">(Prime Minister's Office)</a>. Part of the difference is time and part may be definitions, which changes every per-head calculation.</p>
+<p><strong>Shortage is counted in positions, not people.</strong> The deficit figures are "staffing units" of the public sector. They do not show part-time posts, doctors near retirement, or how far a patient must travel to the nearest one.</p>
+<p><strong>The registry sees only the diagnosed.</strong> Retinopathy data collection in the national register began only in 2015 as an initiative of the e-health centre <a class="c" href="https://www.biomedres.info/articles/diabetes-and-diabetic-retinopathy-in-kazakhstan-from-20132018-17682.html">(Kazakhstan diabetes and retinopathy 2013-2018)</a>. The same analysis found diabetes more common in cities than in the countryside, which I read as a possible sign of better diagnosis in cities, not lower disease in villages; that is a hypothesis, not a finding. The Pavlodar study, in which 177 of 310 examined patients had retinopathy, suggests that screening reveals far more disease than routine records do <a class="c" href="https://newjournal.ssmu.kz/en/publication/163/screening-of-diabetic-retinopathy-in-a-population-of-pavlodar-region/">(Kapanov et al., 2017)</a>.</p>
+<p><strong>Nobody publishes how many diabetics are screened.</strong> A Kazakh developer reported that more than 36,000 patients had been examined with its AI system by 2023, and that about 10,000 were found with disease at an early stage <a class="c" href="https://silkwaytv.kz/en/medical-innovations-showcased-at-innoprom-kazakhstan-2023">(Silk Way TV, 2023)</a>. These are operator figures. They cannot be linked to the registry, and I found no public denominator of how many diabetic patients should be screened each year.</p>
+<p><strong>Definitions blur.</strong> The official metadata for the tuberculosis indicator contains text copied from a hepatitis B indicator, a small sign of how loosely some series are documented <a class="c" href="https://stat.gov.kz/en/open-data/474265/476551/">(BNS open data)</a>.</p>
+<p>My overall assessment: population counts are solid; staffing figures are usable but depend on definitions and on who reports them; and there is almost no public data on whether rural people with diabetes are actually screened. Any AI proposal for this problem starts without a baseline.</p>
+</section>
+
+<section id="research">
+<h2><span class="num">3</span>Current State of Research</h2>
+<p class="lab">Organised by approach, not by author</p>
+<p>Research on this problem comes in four groups that rarely speak to each other: descriptions of Kazakhstan's health system and diabetes burden, trials of AI image reading, field studies of AI in real clinics, and critical work on bias, hidden labour and energy.</p>
+<h3>A. The health system and the disease burden in Kazakhstan</h3>
+<p>A 2024 study in <em>Human Resources for Health</em> examines Kazakhstan's rural health workforce and the policies aimed at the shortage, including financial incentives <a class="c" href="https://link.springer.com/10.1186/s12960-024-00905-0">(Human Resources for Health, 2024)</a>. A pilot study in Almaty found, unexpectedly, that rural respondents seemed to have better access to primary-care providers than urban ones, and called for larger research <a class="c" href="https://oalib-perpustakaan.upi.edu/Record/doaj_6a7f7062e4e94943b5b888d57a058e4b/Details">(Almaty family-medicine pilot, 2015)</a>. On diabetes, Galiyeva and colleagues analysed 475,539 registered patients from the national electronic system for 2014-2019 <a class="c" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9650815">(Galiyeva et al., 2022)</a>, and a Pavlodar screening study found retinopathy in most of the registered patients it examined <a class="c" href="https://newjournal.ssmu.kz/en/publication/163/screening-of-diabetic-retinopathy-in-a-population-of-pavlodar-region/">(Kapanov et al., 2017)</a>. These studies are strong on describing the burden and weak on testing remedies. They also disagree in an interesting way: the Almaty pilot suggests rural access is fine, while the staffing data show a three-to-one doctor gap. The likely reconciliation is that access to a nearby primary-care point and access to a specialist's diagnosis are different things, which is exactly the gap an AI-assisted screen would target.</p>
+<h3>B. Clinical validation of AI diagnosis</h3>
+<p>Gulshan and colleagues (2016) showed in <em>JAMA</em> that a deep-learning algorithm could detect diabetic retinopathy in retinal photographs at a level comparable to ophthalmologists <a class="c" href="https://doi.org/10.1001/jama.2016.17216">(Gulshan et al., 2016)</a>. For tuberculosis, Kazemzadeh and colleagues trained a system on 165,754 chest X-rays from more than 22,000 patients in ten countries and found it non-inferior to radiologists <a class="c" href="https://pubs.rsna.org/doi/10.1148/radiol.212213">(Kazemzadeh et al., 2022)</a>; in 2021 the WHO recommended computer-aided detection as an alternative to human readers for TB screening, the first time it had issued guidelines on AI software for any disease <a class="c" href="https://link.springer.com/10.1186/s44263-023-00033-2">(Creswell et al., 2023)</a>. This approach shows the technology can work in controlled conditions. It does not show that it improves health in a remote clinic.</p>
+<h3>C. Implementation in real clinics</h3>
+<p>Beede and colleagues (2020) observed the retinopathy system in eleven Thai clinics and found a tension between the model's image-quality threshold and the poor lighting and slow connections of real clinics <a class="c" href="https://research.google/pubs/a-human-centered-evaluation-of-a-deep-learning-system-deployed-in-clinics-for-the-detection-of-diabetic-retinopathy/">(Beede et al., 2020)</a>. A later prospective study at nine Thai primary-care sites measured sensitivity of 91.4% and specificity of 95.4% for vision-threatening disease, with specialists over-reading every image <a class="c" href="https://aboonline.org.br/details/6657/en-US">(Ruamviboonsuk et al., 2022)</a>. A cost-utility model of Thailand's national programme found screening with AI cost about US$2.70 less per patient than trained human graders from a societal perspective, with similar health outcomes, but flagged low compliance with referrals as a limit <a class="c" href="https://research.google/people/107866">(Srisubat et al., 2023)</a>. For tuberculosis, Creswell and colleagues compiled early implementation experience from nine countries, reporting for example that Pakistan had run more than 2 million screens through networked mobile units, but also that cloud systems need stable bandwidth and that data are often stored on foreign servers <a class="c" href="https://link.springer.com/10.1186/s44263-023-00033-2">(Creswell et al., 2023)</a>. This approach is the most relevant and also the most compromised: much of it is funded or co-written by the developers. The Thai studies were funded by Google and a Thai hospital, and one author of the TB review has since joined a vendor. A 2026 review warns that many studies come from organisations involved in developing the tools <a class="c" href="https://www.emjreviews.com/radiology/news/ai-assisted-chest-x-rays-in-tb-detection-across-lmics/">(EMJ, 2026)</a>.</p>
+<h3>D. Critical work: bias, hidden labour and energy</h3>
+<p>Obermeyer and colleagues (2019) found that a widely used US health algorithm under-served Black patients because it used past costs as a proxy for need <a class="c" href="https://doi.org/10.1126/science.aax2342">(Obermeyer et al., 2019)</a>. For this project the lesson is that a model trained elsewhere can fail quietly on a different population; a validation of a retinopathy system in Indigenous Australians was done for exactly that reason <a class="c" href="https://research.google/people/107866">(Chia et al., 2024)</a>. Gray and Suri (2019) document the low-paid human workers behind AI systems <a class="c" href="https://doi.org/10.1086/712394">(Gray &amp; Suri, 2019)</a>, and Strubell and colleagues (2019) measure the energy cost of training large models <a class="c" href="https://doi.org/10.18653/v1/P19-1355">(Strubell et al., 2019)</a>. Wahl and colleagues (2018) argue that in poor settings infrastructure and governance decide whether AI helps <a class="c" href="https://doi.org/10.1136/bmjgh-2018-000798">(Wahl et al., 2018)</a>.</p>
+<h3>What is known, contested, and missing</h3>
+<p><strong>Known:</strong> algorithms can match specialists on good retinal images; Kazakhstan has a measurable rural doctor gap. <strong>Contested:</strong> whether lab accuracy becomes better health outcomes in remote clinics, and whether rural access in Kazakhstan is poor or adequate. <strong>Fell short:</strong> nearly all effect evidence comes from developers or their partners.</p>
+<div class="q"><b>THE GAP</b>A Kazakh company already screens patients with an AI retinopathy system, but every figure about it comes from the developer or the press. I found no independent evaluation of it, no published check on whether patients flagged in rural clinics actually reach treatment, and no cost accounting that sets energy, money, labour, governance and data side by side. This project imports the evaluation discipline along with the technology.</div>
+</section>
+
+<section id="solution">
+<h2><span class="num">4</span>The AI-Assisted Solution, and What It Would Cost</h2>
+<p class="lab">Part A: the solution</p>
+<h3>The proposal: Village Eye Screening</h3>
+<p>I propose a human-in-the-loop eye-screening service for rural primary care. At a village health post or district polyclinic, a trained nurse takes a retinal photograph of a registered patient with diabetes using a handheld camera. Software reads the image in minutes and sorts it into three groups: no sign of disease, signs of disease, and ungradable. A specialist at the oblast eye centre reviews every positive and every ungradable image, plus a random sample of negatives. Patients with positive results are booked into the referral system, and the result enters their electronic health record.</p>
+<ul>
+<li><strong>What it does:</strong> screens diabetic patients for retinopathy, once a year, close to home.</li>
+<li><strong>Run by:</strong> oblast health departments under the Ministry of Health, with the review rules, data and audit rights held by the state. A vendor supplies software and cameras under a flat-fee contract.</li>
+<li><strong>Reaches:</strong> registered diabetic patients in rural districts, starting with regions where the rural share is highest and specialists are far.</li>
+</ul>
+<p>The design is not speculative. The parts exist, in Kazakhstan and abroad, and have been measured, with caveats.</p>
+
+<div class="case"><h3>CASE STUDY 1 · KAZAKHSTAN</h3>
+<h3 style="margin-top:0">A domestic AI retinopathy system</h3>
+<p><strong>What was built.</strong> Kazakh researchers developed software for remote diagnosis of diabetic retinopathy. A nurse takes a fundus photograph with a handheld camera, an algorithm detects the presence of retinopathy, and an ophthalmologist in the district or regional centre confirms the finding, which is entered in the patient's electronic health passport. It had been implemented in 17 hospitals in Astana, Almaty, and the North Kazakhstan, East Kazakhstan, Turkistan and Akmola regions <a class="c" href="https://silkwaytv.kz/en/kazakh-scientists-develop-system-for-remote-diagnosis-of-diabetes-complications">(Silk Way TV)</a>.</p>
+<p><strong>What it reportedly achieved.</strong> By 2023 the developer said more than 36,000 patients had been examined in over 24 clinics, that the image is uploaded to the cloud and a report issued in five to seven minutes, that accuracy exceeds 91%, and that about 10,000 patients were found with disease at an early stage <a class="c" href="https://silkwaytv.kz/en/medical-innovations-showcased-at-innoprom-kazakhstan-2023">(Silk Way TV, 2023)</a>. The project was financed by the Science Fund. <strong>Caveat:</strong> these are developer and press figures, not an independent evaluation, and the 91% figure comes without a test population. I use the case to show that the system is already working here, not to prove how well it works.</p></div>
+
+<div class="case"><h3>CASE STUDY 2 · THAILAND</h3>
+<h3 style="margin-top:0">Deep-learning retinopathy screening in a national programme</h3>
+<p><strong>What was built.</strong> Thailand's Ministry of Public Health had around 4.5 million patients with diabetes and about 200 retinal specialists, and nurses sent photographs to a specialist elsewhere, a process that could take up to ten weeks <a class="c" href="https://www.technologyreview.com/2020/04/27/1000658/google-medical-ai-accurate-lab-real-life-clinic-covid-diabetes-retina-disease/amp/">(MIT Technology Review, 2020)</a>. A deep-learning system was added at primary-care sites so nurses could get a result in real time, with regional retina specialists over-reading each image as a safety mechanism <a class="c" href="https://aboonline.org.br/details/6657/en-US">(Ruamviboonsuk et al., 2022)</a>.</p>
+<p><strong>What it achieved.</strong> In a prospective study across nine primary-care sites with 7,651 eligible patients, the system detected vision-threatening disease with 91.4% sensitivity and 95.4% specificity, and 31.5% of patients were referred (for disease, ungradable images or low visual acuity) <a class="c" href="https://doaj.org/article/8274737a776e480a9e055f8af77311d8">(Ruamviboonsuk et al., 2022)</a>. The system cost less than human graders from a societal perspective, about US$2.70 per patient <a class="c" href="https://research.google/people/107866">(Srisubat et al., 2023)</a>.</p>
+<p><strong>What went wrong first.</strong> In an earlier field study across eleven clinics, more than a fifth of images were rejected as too low in quality, because nurses scanned dozens of patients an hour in poor lighting <a class="c" href="https://www.technologyreview.com/2020/04/27/1000658/google-medical-ai-accurate-lab-real-life-clinic-covid-diabetes-retina-disease/amp/">(MIT Technology Review, 2020)</a>, and slow internet delayed cloud processing <a class="c" href="https://research.google/pubs/a-human-centered-evaluation-of-a-deep-learning-system-deployed-in-clinics-for-the-detection-of-diabetic-retinopathy/">(Beede et al., 2020)</a>. The team then changed the protocol so eye specialists review ungradable images instead of referring them automatically <a class="c" href="https://blog.google/innovation-and-ai/technology/health/healthcare-ai-systems-put-people-center/">(Google Health, 2020)</a>. I copy that rule into my design. <strong>Caveat:</strong> the studies were funded by Google and a Thai hospital.</p></div>
+
+<p>So the solution can work. The harder question is what it costs.</p>
+
+<p class="lab" id="bill" style="margin-top:3rem">Part B: the bill</p>
+<h3>Method</h3>
+<p>I price the proposal bottom-up. The calculator below multiplies the number of screenings by unit costs for devices, software, nurse time, specialist review, electricity and carbon. Where a number comes from a source, it is cited. Everything labelled "assumption" is a placeholder I chose because no public price exists; change it and the bill updates. The sourced anchors are the referral rate (31.5%, Thailand), the nurse time (five to seven minutes, Kazakh developer), and the national electricity generation (117.9 billion kWh in 2024, <a class="c" href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">Samruk-Energy</a>). <mark class="v">CHECK: map each cost line to the course tools from Parts III and IV</mark></p>
+<div class="calc">
+<div><label>Screenings per year (assumption)<input id="s" type="number" value="100000"></label></div>
+<div><label>Sites equipped (assumption)<input id="n" type="number" value="600"></label></div>
+<div><label>Camera + tablet per site, USD (assumption)<input id="cap" type="number" value="6000"></label></div>
+<div><label>Maintenance and internet per site per year, USD (assumption)<input id="run" type="number" value="500"></label></div>
+<div><label>Software fee per screening, USD (assumption)<input id="fee" type="number" step="0.1" value="1.5"></label></div>
+<div><label>Nurse minutes per screening (5-7, developer)<input id="nm" type="number" value="7"></label></div>
+<div><label>Nurse cost per hour, USD (assumption)<input id="nc" type="number" value="5"></label></div>
+<div><label>Share reviewed or referred, % (Thailand 31.5)<input id="rr" type="number" value="31.5"></label></div>
+<div><label>Specialist minutes per review (assumption)<input id="sm" type="number" value="2"></label></div>
+<div><label>Specialist cost per hour, USD (assumption)<input id="sc" type="number" value="15"></label></div>
+<div><label>Years<input id="yrs" type="number" value="5"></label></div>
+<div><label>Device energy per screening, Wh (assumption)<input id="dw" type="number" value="3.5"></label></div>
+<div><label>Server energy per screening, Wh (assumption)<input id="sw" type="number" value="2"></label></div>
+<div><label>One-off retraining energy, kWh (assumption)<input id="tr" type="number" value="50000"></label></div>
+<div><label>Grid CO2, kg per kWh (assumption)<input id="co" type="number" step="0.01" value="0.65"></label></div>
+<div><label>KZT per USD (about 470 in 2026) <mark class="v">CHECK</mark><input id="fx" type="number" value="470"></label></div>
+</div>
+<div class="out" id="out"></div>
+<p class="lab" style="margin-top:.6rem">Not included: treatment of the patients the system finds (laser, injections, surgery), the carbon embodied in manufacturing cameras, water use, and the cost of training nurses. I found no public Kazakh tariff for retinopathy treatment, so I did not invent one.</p>
+
+<div class="cost"><h3>Environmental<small>NEGLIGIBLE ENERGY, REAL CARBON INTENSITY</small></h3>
+<p>With the defaults, running the cameras and the cloud software uses well under a megawatt-hour a year, and the one-off retraining energy adds a few more. Against 117.9 billion kWh generated in 2024 <a class="c" href="https://ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html">(Samruk-Energy, 2024)</a>, that is vanishingly small, and I will not pretend otherwise: for retinal screening, energy is not the deciding cost. It is not free of carbon, because the grid is coal-heavy; estimates of coal's share of generation range from roughly 55% to 75% depending on source and definition <mark class="v">CHECK: cite one grid dataset and explain the range</mark>. The environmental risks are different: manufacturing and replacing hundreds of cameras, and, if the vendor trains models in foreign data centres, energy use that Kazakhstan never sees. The environmental cost would grow only if the system expanded to many more tasks at once.</p></div>
+
+<div class="cost"><h3>Economic<small>CHEAP TO FIND, EXPENSIVE TO TREAT</small></h3>
+<p>The calculator puts the five-year cost of screening at a few billion tenge, less than a single year of the state's rural-doctor support budget of 4.5 billion tenge in 2025 <a class="c" href="https://en.orda.kz/support-for-rural-doctors-doubles-amid-staffing-shortage-10084/">(Orda.kz)</a>. In Thailand, screening with AI was cheaper than human graders, by about US$2.70 per patient <a class="c" href="https://research.google/people/107866">(Srisubat et al., 2023)</a>. The catch is downstream. A screen that works finds disease, and at the Thai referral rate of 31.5%, 100,000 screenings produce about 31,500 patients needing specialist attention every year. If Kazakhstan's treatment capacity cannot absorb them, the programme creates anxiety and no benefit; the Thai cost model itself flags low compliance with referrals as a limit. The state would pay, probably through compulsory health insurance or the health budget; the vendor and the camera importer profit. The risk is the contract: a per-screening fee turns volume into revenue, and a vendor that fails or leaves strands the cameras.</p></div>
+
+<div class="cost"><h3>Labour<small>WORK MOVES FROM THE SPECIALIST TO THE NURSE AND THE REVIEWER</small></h3>
+<p>The nurse gains a task: photographing, explaining results and arranging referral, about seven minutes per patient by the developer's account, in posts that already run short of staff. Oblast ophthalmologists gain a review queue; in Thailand, regional retina specialists over-read every image <a class="c" href="https://aboonline.org.br/details/6657/en-US">(Ruamviboonsuk et al., 2022)</a>, and my design keeps that. Nobody loses their job here, since specialists are scarce, but their time shifts from examining patients to examining screens. The hidden labour is mostly elsewhere: people who label retinal images to train and update models, often poorly paid <a class="c" href="https://doi.org/10.1086/712394">(Gray &amp; Suri, 2019)</a>. If Kazakhstan retrains the model on local images, local ophthalmologists must label them, which costs time that has to be budgeted and paid.</p></div>
+
+<div class="cost"><h3>Political &amp; governance<small>WHO CONTROLS THE MODEL, THE DATA AND THE ERRORS</small></h3>
+<p>Kazakhstan's Law on Artificial Intelligence (No. 230-VIII) was signed on 17 November 2025 and took effect on 18 January 2026; it sets principles including transparency and safety, and creates an authorised ministry for AI and digital development <a class="c" href="https://www.ey.com/en_kz/technical/tax-alerts/2025/12/law-on-artificial-intelligence-kazakhstan">(EY Kazakhstan, 2025)</a>; law-firm summaries describe oversight that grows with a system's autonomy and potential impact <a class="c" href="https://www.mondaq.com/new-technology/1735592/the-new-artificial-intelligence-law-of-the-republic-of-kazakhstan">(Mondaq, 2026)</a>. A medical screening tool with a doctor reviewing every flag fits that logic, but a version that sent patients home without review would not. <mark class="v">CHECK: confirm the risk category of medical systems in the law's text</mark> The main governance risks are control and dependency: whether the state owns the model, its updates and the audit trail, or the vendor does. The TB experience shows that images are often stored on servers outside the country, putting the provider beyond national authorities if a breach occurs <a class="c" href="https://link.springer.com/10.1186/s44263-023-00033-2">(Creswell et al., 2023)</a>. <mark class="v">CHECK: connect to the Week 12 frameworks</mark></p></div>
+
+<div class="cost"><h3>Data ethics<small>HEALTH IMAGES OF PEOPLE WHO CANNOT SAY NO</small></h3>
+<p>The system needs retinal images, diabetes diagnoses, and patient identity and location. A retinal image can identify a person and reveal other health conditions. Consent is hard: in a village where the nurse is the only link to care, agreeing to data use is not free. What could go wrong: a model trained on other populations may perform worse on Kazakh patients, which is why validation in other populations matters <a class="c" href="https://research.google/people/107866">(Chia et al., 2024)</a> and why the Obermeyer case is a warning <a class="c" href="https://doi.org/10.1126/science.aax2342">(Obermeyer et al., 2019)</a>; leaks of health data; and wrong results that patients cannot contest because they do not know software was involved. Personal data rules may also require storage inside the country <mark class="v">CHECK: cite the Law on Personal Data</mark>. The safeguards I would require are listed in the verdict.</p></div>
+
+<div class="verdict" id="verdict">
+<h3>Verdict: yes, but only as a pilot and only under these conditions</h3>
+<p>Knowing the costs, should Kazakhstan do this? My answer is a conditional yes. The screening itself is cheap, the technology is already working in Kazakh clinics, and the rural doctor gap will not close fast. But the bill points to the same weakness every time. It is not the cameras. It is the institutions around them. So: yes, if and only if:</p>
+<ol>
+<li><strong>Independent evaluation is built in.</strong> Roll out district by district, publish the results, and measure what the Kazakh developer has not: accuracy on a defined population, and whether positive patients reach treatment.</li>
+<li><strong>Treatment capacity comes first.</strong> Before screening grows, confirm that oblast eye centres can handle roughly a third of screened patients; otherwise stop.</li>
+<li><strong>A human reviews every positive and every ungradable image,</strong> as in Thailand, and patients have a right to a human second opinion.</li>
+<li><strong>Open tender, flat fee, state-owned data.</strong> The vendor is paid for uptime and accuracy, not per screening. Images stay in Kazakhstan under state control, and the contract includes audit rights and an exit plan.</li>
+<li><strong>The screening does not replace the doctors.</strong> Spending on rural posts, housing and pay for rural staff must not fall, because a camera is not a substitute for a doctor who can treat what it finds.</li>
+</ol>
+<p>If these five cannot be met, my answer is no: the money is better spent on people. The cameras are the cheap part. The institutions around them are the price.</p>
+</div>
+</section>
+
+<section id="ai">
+<h2>AI transparency statement</h2>
+<p class="lab">What AI contributed, what I accepted, what I rejected and why</p>
+<p><strong>What AI contributed.</strong> I built this project with Claude (Anthropic). Claude compared candidate topics, searched the web for sources and data, drafted the text of the four sections, wrote the page, charts and cost calculator, and found the case studies. [Add anything else, for example editing or translation.]</p>
+<p><strong>What I accepted.</strong> [Write what you kept and how you checked it. For example: "I opened every linked source and confirmed the numbers in Figures 1-3; I kept the conditional verdict because..." Only write what is true.]</p>
+<p><strong>What was rejected, and why.</strong> Claude set aside a WHO tuberculosis estimate of 428 per 100,000 from a secondary article because it conflicted with the other series; dropped an earlier plan to use tuberculosis as the main target because the data show Kazakhstan already counts most cases; and removed unverified claims from first drafts that were written from memory. The Kazakh developer's results are kept but labelled as developer figures, because the lack of independent evaluation is part of the argument. [Add your own rejections: what you changed or deleted and why.]</p>
+<p>The full AI Process Log is submitted separately on Moodle.</p>
+</section>
+
+<section id="refs">
+<h2>Sources</h2>
+<p class="lab">Every statistic on this page links to the source below or to the link in the text.</p>
+<ol class="src">
+<li>Bureau of National Statistics of Kazakhstan, population as of 1 March 2026. stat.gov.kz/en</li>
+<li>Nauka i Zdravookhranenie (2021), article citing the State Health Development Programme 2020-2025. newjournal.ssmu.kz/upload/iblock/fa1/62_68_3_23_2021.pdf</li>
+<li>Kazpravda. Most in-demand medical specialties in Kazakhstan. kazpravda.kz/n/nazvany-samye-vostrebovannye-meditsinskie-spetsialnosti-v-kazahstane</li>
+<li>Zakon.kz (2026). In 5 years over a thousand new medical institutions opened. zakon.kz/obshestvo/6536341-v-kazakhstane-za-5-let-otkryto-bolee-tysyachi-novykh-meduchrezhdeniy.html</li>
+<li>24.kz. Almost four thousand doctors are missing in Kazakhstan. 24.kz/ru/news/social/764347-pochti-chetyre-tysyachi-vrachej-ne-khvataet-v-kazakhstane</li>
+<li>Inform.kz. How the doctor shortage in rural areas is being solved. inform.kz/ru/kak-reshaetsya-problema-defitsita-vrachey-v-kazahstanskih-selah-18e3fb</li>
+<li>Orda.kz. Support for rural doctors doubles amid staffing shortage. en.orda.kz/support-for-rural-doctors-doubles-amid-staffing-shortage-10084/</li>
+<li>Galiyeva, D. et al. (2022). Epidemiology of type 1 and type 2 diabetes mellitus in Kazakhstan: data from the unified National Electronic Health System 2014-2019. <em>BMC Endocrine Disorders</em>, 22:275. pmc.ncbi.nlm.nih.gov/articles/PMC9650815</li>
+<li>Kapanov, B. M. et al. (2017). Screening of diabetic retinopathy in a population of Pavlodar region. <em>Nauka i Zdravookhranenie</em>, 1, 146-155. newjournal.ssmu.kz/en/publication/163/</li>
+<li>Diabetes and diabetic retinopathy in Kazakhstan from 2013-2018. biomedres.info/articles/diabetes-and-diabetic-retinopathy-in-kazakhstan-from-20132018-17682.html <mark class="v">CHECK: authors and journal</mark></li>
+<li>Bureau of National Statistics. SDG 3.3.2 tuberculosis incidence. sdgdata.stat.gov.kz/en/3-3-2/ ; metadata at stat.gov.kz/en/open-data/474265/476551/</li>
+<li>TheGlobalEconomy.com. Kazakhstan: tuberculosis cases per 100,000 (World Bank). theglobaleconomy.com/Kazakhstan/Tuberculosis/</li>
+<li>Summary of a 2000-2023 analysis of tuberculosis incidence in Kazakhstan (urban/rural). tbreadingnotes.blogspot.com/2025/05/tuberculosis-in-kazakhstan.html <mark class="v">CHECK: replace with the original paper</mark></li>
+<li>Kapital.kz. Ministry of Health: outflow of medical workers has fallen five-fold. kapital.kz/gosudarstvo/146950/</li>
+<li>Inbusiness.kz. There are fewer doctors in Kazakhstan than in Russia. inbusiness.kz/ru/last/v-kazahstane-vrachej-menshe-chem-v-rossii</li>
+<li>Azattyq Ruhy. Doctor and nurse supply is falling in Kazakhstan. rus.azattyq-ruhy.kz/society/108895-</li>
+<li>Prime Minister of Kazakhstan. Modernising rural health care. primeminister.kz/en/news/modernising-rural-health-care-to-increase-life-expectancy-and-social-well-being-3010107</li>
+<li>Human Resources for Health (2024), doi:10.1186/s12960-024-00905-0. <mark class="v">CHECK: add authors and title</mark></li>
+<li>Family medicine as a model of primary health services delivery: a pilot study in Almaty, Kazakhstan (2015). <em>Central Asian Journal of Global Health</em>.</li>
+<li>Silk Way TV. Kazakh scientists develop system for remote diagnosis of diabetes complications. silkwaytv.kz/en/kazakh-scientists-develop-system-for-remote-diagnosis-of-diabetes-complications</li>
+<li>Silk Way TV (2023). Medical innovations showcased at Innoprom Kazakhstan 2023. silkwaytv.kz/en/medical-innovations-showcased-at-innoprom-kazakhstan-2023</li>
+<li>Gulshan, V. et al. (2016). Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs. <em>JAMA</em>, 316(22). doi:10.1001/jama.2016.17216</li>
+<li>Kazemzadeh, S. et al. (2022). Deep learning detection of active pulmonary tuberculosis at chest radiography matched the clinical performance of radiologists. <em>Radiology</em>, 306(1). doi:10.1148/radiol.212213</li>
+<li>Creswell, J. et al. (2023). Early user perspectives on using computer-aided detection software for interpreting chest X-ray images for tuberculosis. <em>BMC Global and Public Health</em>, 1:30. doi:10.1186/s44263-023-00033-2</li>
+<li>Beede, E. et al. (2020). A human-centered evaluation of a deep learning system deployed in clinics for the detection of diabetic retinopathy. <em>CHI 2020</em>.</li>
+<li>Ruamviboonsuk, P. et al. (2022). Real-time diabetic retinopathy screening by deep learning in a multisite national screening programme. <em>The Lancet Digital Health</em>, 4(4), e235-e244.</li>
+<li>Srisubat, A. et al. (2023). Cost-utility analysis of deep learning and trained human graders for diabetic retinopathy screening in a nationwide program. <em>Ophthalmology and Therapy</em>. doi:10.1007/s40123-023-00688-y</li>
+<li>Chia, M. et al. (2024). Validation of a deep learning system for the detection of diabetic retinopathy in Indigenous Australians. <em>British Journal of Ophthalmology</em>, 108, 268-273.</li>
+<li>Will Douglas Heaven (2020). Google's medical AI was super accurate in a lab. Real life was a different story. <em>MIT Technology Review</em>.</li>
+<li>Google Health (2020). Healthcare AI systems that put people at the center. blog.google</li>
+<li>EMJ (2026). AI-assisted chest X-rays in TB detection across LMICs, discussing Vijayan et al., <em>BJR Open</em>.</li>
+<li>Obermeyer, Z. et al. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. <em>Science</em>, 366(6464). doi:10.1126/science.aax2342</li>
+<li>Gray, M. and Suri, S. (2019). <em>Ghost Work</em>. Houghton Mifflin Harcourt.</li>
+<li>Strubell, E., Ganesh, A. and McCallum, A. (2019). Energy and policy considerations for deep learning in NLP. <em>ACL 2019</em>. doi:10.18653/v1/P19-1355</li>
+<li>Wahl, B. et al. (2018). Artificial intelligence (AI) and global health: how can AI contribute to health in resource-poor settings? <em>BMJ Global Health</em>, 3. doi:10.1136/bmjgh-2018-000798</li>
+<li>Samruk-Energy (2024). Overview of the electricity and coal market in Kazakhstan. ar2024.samruk-energy.kz/en/kazakhstan-power-and-coal-markets.html</li>
+<li>EY Kazakhstan (2025). Law on Artificial Intelligence. ey.com/en_kz/technical/tax-alerts/2025/12/law-on-artificial-intelligence-kazakhstan</li>
+<li>Mondaq (2026). The new Artificial Intelligence Law of the Republic of Kazakhstan. mondaq.com/new-technology/1735592/</li>
+</ol>
+</section>
+</main>
+<footer>[Your name] · PLS 419/519 · Fall 2026 · Built with AI assistance, see the transparency statement</footer>
+
+<script>
+function bars(id,rows,max){document.getElementById(id).innerHTML=rows.map(r=>`<div class="bar"><span>${r[0]}</span><i class="${r[2]||''}" style="width:${r[1]/max*100}%"></i><span>${r[3]||r[1]}</span></div>`).join("")}
+bars("f1",[["Urban",56.8,"",""],["Rural",16.1,"w",""]],60);
+bars("f2",[["Cities",1791,"","1,791"],["Villages",370,"w","370"]],1900);
+bars("f3",[["2019",45.6],["2020",35.7],["2021",35.9],["2022",36.5],["2023 official",34.7],["2023 estimate",49,"w"],["2024 official",33.4],["2024 estimate",45,"w"]],50);
+const ids=["s","n","cap","run","fee","nm","nc","rr","sm","sc","yrs","dw","sw","tr","co","fx"];
+function calc(){const v={};ids.forEach(i=>v[i]=parseFloat(document.getElementById(i).value)||0);
+const Y=Math.max(v.yrs,1),S=v.s*Y,
+dev=v.n*v.cap,mt=v.n*v.run*Y,sw=S*v.fee,nur=S*v.nm/60*v.nc,spec=S*v.rr/100*v.sm/60*v.sc,
+usd=dev+mt+sw+nur+spec,kzt=usd*v.fx,
+kwh=v.s*(v.dw+v.sw)/1000+v.tr/Y,share=kwh/117.9e9*100,co2=kwh*v.co/1000,ref=v.s*v.rr/100;
+const f=x=>Math.round(x).toLocaleString("en-US");
+document.getElementById("out").innerHTML=
+`Total cost over ${Y} years: <b>$${f(usd)}</b> = <b>${(kzt/1e9).toFixed(2)} billion tenge</b><br>`+
+`Of which: devices $${f(dev)} · maintenance $${f(mt)} · software $${f(sw)} · nurse time $${f(nur)} · specialist review $${f(spec)}<br>`+
+`Per screening: <b>$${(usd/Math.max(S,1)).toFixed(2)}</b> · ${(kzt/1e9/(4.5)).toFixed(2)}× one year of the 2025 rural-doctor support budget (4.5 billion tenge)<br>`+
+`Patients referred or reviewed per year: <b>${f(ref)}</b>, each needing specialist capacity (treatment cost not included)<br>`+
+`Electricity: <b>${(kwh/1000).toFixed(1)} MWh per year</b> = ${share.toFixed(6)}% of 2024 national generation; about <b>${co2.toFixed(1)} t CO2 per year</b>`;}
+ids.forEach(i=>document.getElementById(i).addEventListener("input",calc));calc();
+</script>
+</body>
+</html>
